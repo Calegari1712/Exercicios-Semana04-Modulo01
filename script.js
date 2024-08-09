@@ -1,18 +1,26 @@
+console.log ("script.js funcionando")
 
-function calculosSimples(numero1, numero2) {
-    const soma = (numero1 + numero2)
-    return soma
+function soma(numero1, numero2) {
+    const resultado = numero1 + numero2
+    return resultado
+
 }
 
 function gerarResultado(event) {
-
     event.preventDefault()
-
-
-    const numeroUm = parsefloat(document.getElementById('numeroUm').value)
-    const numeroDois = parsefloat(document.getElementById('numeroDois').value)
-    console.log(calculosSimples(numeroUm, numeroDois))
+    
+    const numeroUm = parseFloat(document.getElementById('numeroUm').value)
+    const numeroDois = parseFloat(document.getElementById('numeroDois').value)
+    const txtResultado = document.getElementById('txt-resultado')
+    console.log(soma(numeroUm, numeroDois))
+    const resultado = soma(numeroUm, numeroDois)
+    txtResultado.innerText = `Resultado: ${resultado}`
 }
 
-const resultado = calculosSimples
-// alert (calculosSimples)
+
+document
+    .getElementById('calculo')
+    .addEventListener('submit', gerarResultado)
+
+ 
+   
